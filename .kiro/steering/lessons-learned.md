@@ -206,3 +206,18 @@ A cada ~20 entradas ou 2 meses:
 5. Quando feature completa: merge feature → developer (e deletar feature)
 
 **Aplicação**: NUNCA commitar direto na feature ou developer. Sempre usar task branches. Isso garante commits isolados e revisáveis.
+
+---
+
+### 2026-06-27 — JS puro em vez de TypeScript: trade-off consciente
+
+**Contexto**: Projeto inicialmente planejado com TypeScript. Após alinhamento com o padrão da empresa (Alterdata), decidido usar JavaScript ES2022+ puro com Lit.
+
+**Decisão**: JavaScript puro + JSDoc para documentação de tipos + `static properties` do Lit em vez de decorators TS. Sem compilação de tipos, sem tsconfig, sem build step de TS.
+
+**Trade-offs**:
+- Ganho: zero overhead de build para tipos, DX mais simples, sem conflitos de decorator config, alinhado com Alterdata
+- Custo: sem type safety em compile-time, erros de tipo só aparecem em runtime, refactoring menos seguro
+- Mitigação: JSDoc + checkJs no jsconfig.json dá intellisense na IDE, validação por testes 100%
+
+**Aplicação**: Todo arquivo é `.js`. Tipos documentados via JSDoc. Lit usa `static properties = {}` em vez de `@property()`. Classes base simulam interfaces (throw em métodos não implementados).
