@@ -156,3 +156,21 @@ A cada ~20 entradas ou 2 meses:
 - Referenciada 3+ vezes em sessões diferentes
 - Impacta decisões futuras de forma recorrente
 - Virou regra implícita que todos seguem
+
+---
+
+### 2026-06-27 — Workflow de desenvolvimento: Specs + DDD + limites de commit
+
+**Contexto**: Definição do padrão de trabalho para o projeto de microfrontends, alinhado com a prática da empresa.
+
+**Decisão**: O projeto adota:
+1. **Specs mode** — toda feature/bugfix passa por: Requirements → Design → Tasks
+2. **Domain-Driven Design** — sempre modelar o domínio antes de implementar
+3. **100% de cobertura de testes** — nenhuma task é considerada concluída sem cobertura total
+4. **Máximo 10 arquivos por commit** — commits granulares e revisáveis
+
+**Trade-offs**:
+- Ganho: rastreabilidade total, PRs menores e mais fáceis de revisar, domínio bem definido
+- Custo: mais commits por feature, disciplina na divisão de tasks
+
+**Aplicação**: Toda task deve ser planejada para gerar no máximo 10 arquivos modificados. Se ultrapassar, dividir em sub-tasks.

@@ -49,3 +49,10 @@ ANTES de qualquer alteração de código, execute este ciclo:
 - NUNCA assuma contexto não fornecido — pergunte
 - SEMPRE explique o "porquê" das decisões
 - DIFERENCIE explicitamente hipótese de fato
+
+## Regras de Commit e Git
+
+- MÁXIMO 10 arquivos por commit — se ultrapassar, divida em sub-tasks
+- SEMPRE modele o domínio antes de implementar (DDD)
+- 100% de cobertura de testes — nenhuma task é concluída sem isso
+- USE Specs mode para toda feature/bugfix: Requirements → Design → Tasks
