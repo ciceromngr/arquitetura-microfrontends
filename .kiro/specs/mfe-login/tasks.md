@@ -16,10 +16,10 @@
 9. `apps/mfe-login/src/styles/login.styles.js` — CSS do componente (Lit css template)
 
 **Critérios de aceite**:
-- [ ] Domínio modelado com JSDoc para documentação de tipos
-- [ ] Validador cobre: email required, email formato, senha required, senha min 6
-- [ ] Mock retorna sucesso para admin@mfe.dev/123456 e erro para qualquer outro
-- [ ] `bun install` funciona sem erros no workspace
+- [x] Domínio modelado com JSDoc para documentação de tipos
+- [x] Validador cobre: email required, email formato, senha required, senha min 6
+- [x] Mock retorna sucesso para admin@mfe.dev/123456 e erro para qualquer outro
+- [x] `bun install` funciona sem erros no workspace
 
 ---
 

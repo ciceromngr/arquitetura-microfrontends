@@ -1,0 +1,223 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "Domínio modelado com JSDoc para documentação de tipos": [
+      {
+        "executionId": "efd1772b-5b88-4483-b521-479b7460f34c",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593180683
+      },
+      {
+        "executionId": "efd1772b-5b88-4483-b521-479b7460f34c",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593195143
+      },
+      {
+        "executionId": "6ae3f2dc-26e6-483d-a510-dd2088e042d4",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593464938
+      },
+      {
+        "executionId": "6ae3f2dc-26e6-483d-a510-dd2088e042d4",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593511251
+      },
+      {
+        "executionId": "6ae3f2dc-26e6-483d-a510-dd2088e042d4",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593586302
+      }
+    ],
+    "Validador cobre: email required, email formato, senha required, senha min 6": [
+      {
+        "executionId": "efd1772b-5b88-4483-b521-479b7460f34c",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593181135
+      },
+      {
+        "executionId": "6ae3f2dc-26e6-483d-a510-dd2088e042d4",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593465207
+      },
+      {
+        "executionId": "6ae3f2dc-26e6-483d-a510-dd2088e042d4",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593599957
+      },
+      {
+        "executionId": "6ae3f2dc-26e6-483d-a510-dd2088e042d4",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593644102
+      }
+    ],
+    "Mock retorna sucesso para admin@mfe.dev/123456 e erro para qualquer outro": [
+      {
+        "executionId": "efd1772b-5b88-4483-b521-479b7460f34c",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593181488
+      },
+      {
+        "executionId": "6ae3f2dc-26e6-483d-a510-dd2088e042d4",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593465502
+      },
+      {
+        "executionId": "6ae3f2dc-26e6-483d-a510-dd2088e042d4",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593648432
+      },
+      {
+        "executionId": "6ae3f2dc-26e6-483d-a510-dd2088e042d4",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593688936
+      }
+    ],
+    "`bun install` funciona sem erros no workspace": [
+      {
+        "executionId": "efd1772b-5b88-4483-b521-479b7460f34c",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593181827
+      },
+      {
+        "executionId": "6ae3f2dc-26e6-483d-a510-dd2088e042d4",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593465881
+      },
+      {
+        "executionId": "6ae3f2dc-26e6-483d-a510-dd2088e042d4",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593693541
+      },
+      {
+        "executionId": "6ae3f2dc-26e6-483d-a510-dd2088e042d4",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782595608943
+      }
+    ],
+    "`<mfe-login>` renderiza formulário completo": [
+      {
+        "executionId": "efd1772b-5b88-4483-b521-479b7460f34c",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593182229
+      },
+      {
+        "executionId": "6ae3f2dc-26e6-483d-a510-dd2088e042d4",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593466197
+      },
+      {
+        "executionId": "6ae3f2dc-26e6-483d-a510-dd2088e042d4",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782595618615
+      }
+    ],
+    "Validação inline funciona (erro aparece ao tentar submit com campos inválidos)": [
+      {
+        "executionId": "efd1772b-5b88-4483-b521-479b7460f34c",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593182555
+      },
+      {
+        "executionId": "6ae3f2dc-26e6-483d-a510-dd2088e042d4",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593466525
+      }
+    ],
+    "Loading state visível durante submit": [
+      {
+        "executionId": "efd1772b-5b88-4483-b521-479b7460f34c",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593182884
+      },
+      {
+        "executionId": "6ae3f2dc-26e6-483d-a510-dd2088e042d4",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593466779
+      }
+    ],
+    "Custom Events disparados corretamente (success, error, forgot, register)": [
+      {
+        "executionId": "efd1772b-5b88-4483-b521-479b7460f34c",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593183317
+      },
+      {
+        "executionId": "6ae3f2dc-26e6-483d-a510-dd2088e042d4",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593467053
+      }
+    ],
+    "Acessibilidade: labels, aria-live, Tab navigation, Enter submit": [
+      {
+        "executionId": "efd1772b-5b88-4483-b521-479b7460f34c",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593183746
+      },
+      {
+        "executionId": "6ae3f2dc-26e6-483d-a510-dd2088e042d4",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593467325
+      }
+    ],
+    "CSS Custom Properties do shell aplicadas (cores, fontes)": [
+      {
+        "executionId": "efd1772b-5b88-4483-b521-479b7460f34c",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593184310
+      },
+      {
+        "executionId": "6ae3f2dc-26e6-483d-a510-dd2088e042d4",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593467647
+      }
+    ],
+    "100% coverage em domínio (entities, validators, services)": [
+      {
+        "executionId": "efd1772b-5b88-4483-b521-479b7460f34c",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593184907
+      },
+      {
+        "executionId": "6ae3f2dc-26e6-483d-a510-dd2088e042d4",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593467931
+      }
+    ],
+    "Testes de componente cobrem: render, validação, submit sucesso, submit erro, eventos": [
+      {
+        "executionId": "efd1772b-5b88-4483-b521-479b7460f34c",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593185217
+      },
+      {
+        "executionId": "6ae3f2dc-26e6-483d-a510-dd2088e042d4",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593468221
+      }
+    ],
+    "`nx run mfe-login:test` passa sem erros": [
+      {
+        "executionId": "efd1772b-5b88-4483-b521-479b7460f34c",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593185703
+      },
+      {
+        "executionId": "6ae3f2dc-26e6-483d-a510-dd2088e042d4",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593468618
+      }
+    ],
+    "Coverage report gerado": [
+      {
+        "executionId": "efd1772b-5b88-4483-b521-479b7460f34c",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593186107
+      },
+      {
+        "executionId": "6ae3f2dc-26e6-483d-a510-dd2088e042d4",
+        "chatSessionId": "sess_ef85e278-dd79-46bd-9b7f-068b24735491",
+        "timestamp": 1782593469035
+      }
+    ]
+  }
+}

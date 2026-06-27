@@ -9,10 +9,16 @@
   <script type="importmap">
     {
       "imports": {
+        "@mfe/login": "/apps/mfe-login/src/index.js",
         "@mfe/tokens": "/libs/tokens/src/index.ts",
         "@mfe/utils": "/libs/utils/src/index.ts"
       }
     }
+  </script>
+
+  <!-- Carrega o MFE de Login -->
+  <script type="module">
+    import '@mfe/login';
   </script>
 
   <!-- Design Tokens globais via CSS Custom Properties -->
@@ -45,6 +51,42 @@
       --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
+    /*
+     * Theming: Shell → MFE Login
+     *
+     * O componente <mfe-login> usa CSS Custom Properties com prefixo --mfe-*
+     * que são herdadas pelo Shadow DOM. As variáveis do shell (--color-*, --font-*, etc.)
+     * são mapeadas aqui para o namespace do componente.
+     *
+     * Mapeamento:
+     *   Shell Token             → MFE Custom Property
+     *   --color-primary         → --mfe-color-primary
+     *   --color-error           → --mfe-color-error
+     *   --color-surface         → --mfe-color-surface
+     *   --font-family           → --mfe-font-family
+     *   --radius-md             → --mfe-border-radius
+     *   --radius-sm             → --mfe-border-radius-sm
+     *   --shadow-md             → --mfe-shadow-card
+     *   --spacing-sm            → --mfe-spacing-sm
+     *   --spacing-md            → --mfe-spacing-md
+     *   --spacing-lg            → --mfe-spacing-lg
+     *
+     * Se nenhum mapeamento for definido, o componente usa fallback defaults internos.
+     */
+    mfe-login {
+      --mfe-color-primary: var(--color-primary);
+      --mfe-color-primary-hover: #1557b0;
+      --mfe-color-error: var(--color-error);
+      --mfe-color-surface: var(--color-surface);
+      --mfe-font-family: var(--font-family);
+      --mfe-border-radius: var(--radius-md);
+      --mfe-border-radius-sm: var(--radius-sm);
+      --mfe-shadow-card: var(--shadow-md);
+      --mfe-spacing-sm: var(--spacing-md);
+      --mfe-spacing-md: var(--spacing-lg);
+      --mfe-spacing-lg: var(--spacing-xl);
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -64,12 +106,7 @@
   <!-- Exemplo: <mfe-dashboard></mfe-dashboard> -->
 
   <main id="app">
-    <h1 style="padding: var(--spacing-xl); color: var(--color-primary);">
-      MFE Shell - Ready
-    </h1>
-    <p style="padding: 0 var(--spacing-xl); color: var(--color-secondary);">
-      Microfrontends will be loaded here as Web Components.
-    </p>
+    <mfe-login></mfe-login>
   </main>
 </body>
 </html>
