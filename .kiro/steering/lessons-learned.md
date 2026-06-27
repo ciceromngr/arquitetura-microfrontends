@@ -174,3 +174,23 @@ A cada ~20 entradas ou 2 meses:
 - Custo: mais commits por feature, disciplina na divisão de tasks
 
 **Aplicação**: Toda task deve ser planejada para gerar no máximo 10 arquivos modificados. Se ultrapassar, dividir em sub-tasks.
+
+---
+
+### 2026-06-27 — Padrão de branching: developer → feature → task
+
+**Contexto**: Definição do fluxo de branches para o projeto, inspirado na prática da empresa (Alterdata).
+
+**Padrão**: Hierarquia de branches em 3 níveis:
+- `developer` → branch estável (default)
+- `feature/*` → branch de feature, criada a partir de developer
+- `task/*` → sub-branch da feature para commits específicos
+
+**Fluxo**:
+1. Criar `feature/nome` a partir de `developer`
+2. Criar `task/descricao` a partir da feature
+3. Commitar na task
+4. Merge task → feature (e deletar task local + remote)
+5. Quando feature completa: merge feature → developer (e deletar feature)
+
+**Aplicação**: NUNCA commitar direto na feature ou developer. Sempre usar task branches. Isso garante commits isolados e revisáveis.
