@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Self-Learning Filtrado",
+      "trigger": "Stop",
+      "description": "Ao final da sessão, avalia se houve aprendizado relevante. Só sugere documentar quando investigação foi pesada ou descobriu algo não-óbvio.",
+      "action": {
+        "type": "agent",
+        "prompt": "Avalie a sessão que acabou. APENAS sugira documentar se:\\n- Investigação pesada (8+ interações no mesmo problema)\\n- Descoberta de regra/padrão NÃO documentado no projeto\\n- Armadilha técnica que pode pegar alguém de novo\\n- Bug resolvido cuja causa raiz é não-óbvia\\n- Decisão técnica com trade-off importante\\n\\nNÃO sugira para:\\n- Investigações rotineiras (3-5 arquivos lidos)\\n- Correções simples sem padrão\\n- Informação que já existe em lessons-learned.md\\n- Tarefas de configuração/setup\\n\\nSE for relevante: \\\"Primo, percebi algo importante: [descreva em 1 frase]. Quer que eu registre em lessons-learned.md?\\\"\\nSE não for relevante: SILÊNCIO total."
+      }
+    }
+  ]
+}

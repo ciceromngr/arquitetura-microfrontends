@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "google-chat": {
+      "command": "node",
+      "args": [".kiro/mcp/google-chat/server.js"],
+      "env": {
+        "GOOGLE_CHAT_WEBHOOK_URL": "${env:GOOGLE_CHAT_WEBHOOK_URL}"
+      },
+      "disabled": false,
+      "autoApprove": ["send_chat_message"]
+    }
+  }
+}

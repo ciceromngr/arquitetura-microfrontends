@@ -1,0 +1,3 @@
+# Variáveis de ambiente (contém segredos)
+.env
+.env.*

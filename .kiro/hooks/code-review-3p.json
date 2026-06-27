@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Code Review 3 Perspectivas",
+      "trigger": "PostToolUse",
+      "description": "Após editar código, faz self-review automático em 3 perspectivas: Engineer, Security, QA. Se tudo ok, silêncio. Se encontrar problema, corrige.",
+      "matcher": "fs_write|str_replace|fs_append",
+      "action": {
+        "type": "agent",
+        "prompt": "Self-review rápido em 3 perspectivas:\\n\\n1. ENGINEER: Segue padrões do projeto (ver quality-rules.md)? Nomes adequados? Imports corretos? Duplicação?\\n2. SECURITY: Segredos expostos? SQL sem parâmetros? Dados sensíveis em log? Rota sem auth? Input sem validação?\\n3. QA: E se input for null/vazio? E se API/DB falhar? Error handling completo? Edge cases cobertos?\\n\\nSE encontrar problema real → SINALIZE de forma concisa e sugira correção.\\nSE estiver tudo ok → SILÊNCIO total, não reporte que a revisão foi feita."
+      }
+    }
+  ]
+}

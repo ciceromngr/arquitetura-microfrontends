@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Review Pós-Task",
+      "trigger": "PostTaskExec",
+      "description": "Após conclusão de task, executa revisão final de qualidade, riscos residuais e prontidão para commit.",
+      "action": {
+        "type": "agent",
+        "prompt": "A task foi concluída. Faça uma revisão final rápida: 1) Os padrões de quality-rules.md foram seguidos? 2) Há riscos residuais não sinalizados? 3) Testes foram considerados? 4) O código está pronto para commit? Responda de forma concisa — só aponte problemas reais."
+      }
+    }
+  ]
+}

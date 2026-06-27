@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Parecer no Google Chat",
+      "trigger": "PostTaskExec",
+      "description": "Após concluir task, gera parecer técnico e envia ao Google Chat via MCP.",
+      "action": {
+        "type": "agent",
+        "prompt": "A task foi concluída. Gere um parecer e envie ao Google Chat usando a tool send_chat_message do MCP google-chat.\\n\\nFormato OBRIGATÓRIO da mensagem:\\n\\n*Kairon — Operação concluída*\\n\\n*Resumo:*\\n- [item 1 do que foi feito]\\n- [item 2]\\n- [item N]\\n\\n*Versionamento:*\\n- Merge Request: {link ou 'N/A'}\\n- Branch: {nome da branch atual ou 'N/A'}\\n- SVN Revisions: {revisions ou 'N/A'}\\n\\nINSTRUÇÕES para preencher Versionamento:\\n1. Verifique se existe pasta .git no projeto (execute: git rev-parse --is-inside-work-tree)\\n2. SE Git: preencha Branch (git branch --show-current). MR/PR só se souber o link.\\n3. SE SVN: tente obter revisions recentes (svn log -l 3 --quiet)\\n4. SE nenhum VCS encontrado: coloque 'N/A' nos campos\\n5. NUNCA invente dados — se não souber, use 'N/A'\\n\\nSE o MCP google-chat não estiver disponível, apenas informe o parecer no chat local sem erro."
+      }
+    }
+  ]
+}

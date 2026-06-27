@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Validação Pré-Escrita",
+      "trigger": "PreToolUse",
+      "description": "Antes de criar ou editar arquivos, verifica se a operação está alinhada com padrões de qualidade e escopo da tarefa.",
+      "matcher": "fs_write|str_replace|fs_append",
+      "action": {
+        "type": "agent",
+        "prompt": "Antes de executar esta operação de escrita, verifique rapidamente: 1) Está dentro do escopo da tarefa atual? 2) Segue as convenções de nomenclatura do projeto? 3) Não está sobrescrevendo algo sem justificativa? Se estiver tudo ok, prossiga normalmente. Se houver risco, sinalize antes de continuar."
+      }
+    }
+  ]
+}

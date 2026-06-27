@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Contexto Automático de Início de Sessão",
+      "trigger": "SessionStart",
+      "description": "Ao iniciar uma sessão, injeta contexto de continuidade: branch atual, últimos commits, e verifica tarefas pendentes.",
+      "action": {
+        "type": "agent",
+        "prompt": "Início de sessão. Para manter continuidade:\\n\\n1. IDENTIFIQUE a branch atual (se houver VCS) e últimos 3 commits.\\n2. O steering `lessons-learned.md` já é carregado automaticamente — NÃO repita seu conteúdo.\\n3. SE houver tarefa em andamento (spec ativa ou task list pendente), RESUMA o estado atual em 1-2 frases.\\n4. SE nada relevante, apenas confirme que está pronto para trabalhar.\\n\\nNÃO gere output longo. Máximo 5 linhas de contexto útil."
+      }
+    }
+  ]
+}
