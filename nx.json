@@ -1,0 +1,25 @@
+{
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "sharedGlobals": ["{workspaceRoot}/tsconfig.base.json", "{workspaceRoot}/vite.config.base.ts"]
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["default"],
+      "cache": true
+    },
+    "dev": {
+      "cache": false
+    },
+    "test": {
+      "inputs": ["default"],
+      "cache": true
+    },
+    "lint": {
+      "inputs": ["default"],
+      "cache": true
+    }
+  },
+  "defaultBase": "developer"
+}

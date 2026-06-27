@@ -1,3 +1,22 @@
 # Variáveis de ambiente (contém segredos)
 .env
 .env.*
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# NX
+.nx/cache
+.nx/workspace-data
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

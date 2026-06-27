@@ -1,0 +1,22 @@
+{
+  "name": "@mfe/root",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "scripts": {
+    "dev": "nx run shell:dev",
+    "build": "nx run-many --target=build",
+    "test": "nx run-many --target=test",
+    "lint": "nx run-many --target=lint"
+  },
+  "devDependencies": {
+    "nx": "^20.0.0",
+    "@nx/web": "^20.0.0",
+    "typescript": "^5.5.0",
+    "vite": "^6.0.0",
+    "vitest": "^2.0.0"
+  }
+}

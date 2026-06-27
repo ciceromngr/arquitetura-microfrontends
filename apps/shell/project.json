@@ -1,0 +1,21 @@
+{
+  "name": "shell",
+  "sourceRoot": "apps/shell",
+  "projectType": "application",
+  "targets": {
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "vite",
+        "cwd": "apps/shell"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "vite build",
+        "cwd": "apps/shell"
+      }
+    }
+  }
+}
