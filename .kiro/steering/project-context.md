@@ -16,8 +16,8 @@ Referências relacionadas: [dev-flow.md](./dev-flow.md), [quality-rules.md](./qu
 
 ## Stack Técnica
 
-- **Linguagem**: TypeScript 5.x (strict mode)
-- **UI Framework**: Lit 3.x (Web Components nativos)
+- **Linguagem**: JavaScript ES2022+ (puro, sem TypeScript)
+- **UI Framework**: Lit 3.x (Web Components nativos, static properties)
 - **Runtime**: Bun (package manager + runtime)
 - **Bundler**: Vite 6.x (dev server + build)
 - **Monorepo**: NX 20.x com @nx/web
@@ -25,6 +25,7 @@ Referências relacionadas: [dev-flow.md](./dev-flow.md), [quality-rules.md](./qu
 - **Lint/Format**: EditorConfig (indent 2 spaces, LF, UTF-8)
 - **CSS**: CSS puro com Custom Properties (variáveis) — sem preprocessador
 - **Composição MFE**: Import Maps nativos do browser
+- **Documentação de tipos**: JSDoc (sem TypeScript)
 
 ## Arquitetura
 
@@ -47,8 +48,8 @@ Referências relacionadas: [dev-flow.md](./dev-flow.md), [quality-rules.md](./qu
 │   └── utils/         ← Utilitários compartilhados
 ├── package.json       ← Workspace root (@mfe/root)
 ├── nx.json            ← Config NX (defaultBase: developer)
-├── tsconfig.base.json ← TS base compartilhado
-└── vite.config.base.ts← Vite base para MFEs
+├── jsconfig.json      ← Config JS (path aliases, checkJs)
+└── vite.config.base.js← Vite base para MFEs
 ```
 
 ## Convenções
@@ -72,8 +73,8 @@ Referências relacionadas: [dev-flow.md](./dev-flow.md), [quality-rules.md](./qu
 
 - `apps/shell/index.html` — Orquestrador central de MFEs, alteração impacta todos
 - `libs/tokens/` — Design tokens globais, mudança afeta visual de todos os MFEs
-- `vite.config.base.ts` — Config compartilhada, mudança afeta build de todos
-- `tsconfig.base.json` — TypeScript base, mudança afeta compilação de todos
+- `vite.config.base.js` — Config compartilhada, mudança afeta build de todos
+- `jsconfig.json` — Config JS base, mudança afeta intellisense de todos
 
 ## Dependências Externas Relevantes
 

@@ -1,7 +1,7 @@
 {
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
-    "sharedGlobals": ["{workspaceRoot}/tsconfig.base.json", "{workspaceRoot}/vite.config.base.ts"]
+    "sharedGlobals": ["{workspaceRoot}/jsconfig.json", "{workspaceRoot}/vite.config.base.js"]
   },
   "targetDefaults": {
     "build": {

@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "checkJs": true,
+    "strict": false,
+    "baseUrl": ".",
+    "paths": {
+      "@mfe/tokens": ["libs/tokens/src/index.js"],
+      "@mfe/utils": ["libs/utils/src/index.js"]
+    }
+  },
+  "include": ["apps/**/*.js", "libs/**/*.js"],
+  "exclude": ["node_modules", "dist"]
+}

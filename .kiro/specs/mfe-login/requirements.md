@@ -55,7 +55,7 @@ Microfrontend de autenticação que renderiza um formulário de login completo c
 
 ## Dados Mock
 
-```typescript
+```javascript
 // Credencial válida para mock
 { email: "admin@mfe.dev", password: "123456" }
 

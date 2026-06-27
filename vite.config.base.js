@@ -15,8 +15,8 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@mfe/tokens': '/libs/tokens/src/index.ts',
-      '@mfe/utils': '/libs/utils/src/index.ts',
+      '@mfe/tokens': '/libs/tokens/src/index.js',
+      '@mfe/utils': '/libs/utils/src/index.js',
     },
   },
 });

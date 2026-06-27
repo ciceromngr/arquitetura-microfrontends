@@ -7,83 +7,100 @@ apps/mfe-login/
 ├── src/
 │   ├── domain/
 │   │   ├── entities/
-│   │   │   └── credentials.ts          ← Value Object (email + password)
+│   │   │   └── credentials.js          ← Factory + constantes
 │   │   ├── services/
-│   │   │   └── auth-service.ts          ← Interface do contrato de auth
+│   │   │   └── auth-service.js          ← Classe base (contrato)
 │   │   └── validators/
-│   │       └── credential-validator.ts  ← Regras de validação
+│   │       └── credential-validator.js  ← Regras de validação
 │   ├── infrastructure/
-│   │   └── auth-service-mock.ts         ← Mock (implementa AuthService)
+│   │   └── auth-service-mock.js         ← Mock (extends AuthService)
 │   ├── components/
-│   │   ├── mfe-login.ts                 ← Custom Element principal
-│   │   ├── login-form.ts               ← Formulário (inputs + botão)
-│   │   └── login-links.ts              ← Links navegação
+│   │   ├── mfe-login.js                 ← Custom Element principal
+│   │   ├── login-form.js               ← Formulário (inputs + botão)
+│   │   └── login-links.js              ← Links navegação
 │   ├── styles/
-│   │   └── login.styles.ts             ← Estilos Lit (css tagged template)
-│   ├── index.ts                         ← Entry point
+│   │   └── login.styles.js             ← Estilos Lit (css tagged template)
+│   ├── index.js                         ← Entry point
 │   └── __tests__/
-│       ├── credentials.spec.ts
-│       ├── credential-validator.spec.ts
-│       ├── auth-service-mock.spec.ts
-│       └── mfe-login.spec.ts
+│       ├── credentials.spec.js
+│       ├── credential-validator.spec.js
+│       ├── auth-service-mock.spec.js
+│       └── mfe-login.spec.js
 ├── package.json
 ├── project.json
-├── tsconfig.json
-└── vite.config.ts
+└── vite.config.js
 ```
 
 ## Domain Model
 
 ### Entities
 
-```typescript
-// credentials.ts — Value Object
-export interface Credentials {
-  email: string;
-  password: string;
+```javascript
+// credentials.js — Factory function
+/**
+ * @param {string} email
+ * @param {string} password
+ * @returns {{ email: string, password: string }}
+ */
+export function createCredentials(email, password) {
+  return { email, password };
 }
 
-export interface AuthResult {
-  success: boolean;
-  user?: { id: string; name: string; email: string };
-  token?: string;
-  error?: string;
-}
+/**
+ * @typedef {Object} AuthResult
+ * @property {boolean} success
+ * @property {{ id: string, name: string, email: string }} [user]
+ * @property {string} [token]
+ * @property {string} [error]
+ */
 ```
 
-### Services (Interface)
+### Services (Classe Base)
 
-```typescript
-// auth-service.ts — Contrato
-export interface AuthService {
-  login(credentials: Credentials): Promise<AuthResult>;
+```javascript
+// auth-service.js — Contrato (classe abstrata simulada)
+export class AuthService {
+  /**
+   * @param {{ email: string, password: string }} credentials
+   * @returns {Promise<AuthResult>}
+   */
+  async login(credentials) {
+    throw new Error('AuthService.login() must be implemented');
+  }
 }
 ```
 
 ### Validators
 
-```typescript
-// credential-validator.ts
-export interface ValidationResult {
-  valid: boolean;
-  errors: { field: string; message: string }[];
-}
-
-export function validateCredentials(credentials: Credentials): ValidationResult;
+```javascript
+// credential-validator.js
+/**
+ * @param {{ email: string, password: string }} credentials
+ * @returns {{ valid: boolean, errors: Array<{ field: string, message: string }> }}
+ */
+export function validateCredentials(credentials) { ... }
 ```
 
-## Component Design
+## Component Design (Lit + JS puro)
 
 ### `<mfe-login>` — Orquestrador
 
-- Instancia AuthService (mock por default)
-- Gerencia estado global (loading, error)
-- Escuta eventos dos sub-componentes
-- Emite Custom Events para o shell
+```javascript
+import { LitElement, html } from 'lit';
+
+export class MfeLogin extends LitElement {
+  static properties = {
+    loading: { type: Boolean },
+    error: { type: String },
+  };
+  // ...
+}
+customElements.define('mfe-login', MfeLogin);
+```
 
 ### `<login-form>` — Formulário
 
-- @property: `loading` (boolean), `errors` (ValidationError[])
+- `static properties`: `loading` (Boolean), `errors` (Array)
 - Renderiza inputs (email, password) + botão
 - Emite evento `login-form:submit` com { email, password }
 - Exibe erros inline por campo
@@ -111,7 +128,9 @@ export function validateCredentials(credentials: Credentials): ValidationResult;
 
 ## Decisões de Design
 
-1. **Sub-componentes internos** (`login-form`, `login-links`) NÃO são expostos como custom elements públicos — são internos ao MFE
-2. **AuthService injetado** no `mfe-login` via propriedade — permite trocar implementação
-3. **Validação síncrona** no client — sem round-trip para validar formato
-4. **Eventos bubbles + composed** — para atravessar Shadow DOM e chegar no shell
+1. **JavaScript puro** — sem TypeScript, usando JSDoc para documentação de tipos
+2. **Lit com static properties** — em vez de decorators (@property, @state)
+3. **Sub-componentes internos** (`login-form`, `login-links`) NÃO são expostos publicamente
+4. **AuthService como classe base** — extends para implementações (mock, HTTP futuro)
+5. **Validação síncrona** no client — sem round-trip
+6. **Eventos bubbles + composed** — para atravessar Shadow DOM

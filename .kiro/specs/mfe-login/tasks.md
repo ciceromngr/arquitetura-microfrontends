@@ -7,16 +7,16 @@
 **Arquivos** (9):
 1. `apps/mfe-login/package.json` — Package do MFE (@mfe/login)
 2. `apps/mfe-login/project.json` — Config NX (targets: dev, build, test)
-3. `apps/mfe-login/tsconfig.json` — Extends tsconfig.base.json
-4. `apps/mfe-login/vite.config.ts` — Extends vite.config.base.ts + entry
-5. `apps/mfe-login/src/index.ts` — Entry point (registra custom element)
-6. `apps/mfe-login/src/domain/entities/credentials.ts` — Interfaces Credentials + AuthResult
-7. `apps/mfe-login/src/domain/services/auth-service.ts` — Interface AuthService
-8. `apps/mfe-login/src/domain/validators/credential-validator.ts` — validateCredentials()
-9. `apps/mfe-login/src/infrastructure/auth-service-mock.ts` — AuthServiceMock (implements AuthService)
+3. `apps/mfe-login/vite.config.js` — Config Vite (entry point)
+4. `apps/mfe-login/src/index.js` — Entry point (registra custom element)
+5. `apps/mfe-login/src/domain/entities/credentials.js` — Factory createCredentials + JSDoc types
+6. `apps/mfe-login/src/domain/services/auth-service.js` — Classe base AuthService (contrato)
+7. `apps/mfe-login/src/domain/validators/credential-validator.js` — validateCredentials()
+8. `apps/mfe-login/src/infrastructure/auth-service-mock.js` — AuthServiceMock (extends AuthService)
+9. `apps/mfe-login/src/styles/login.styles.js` — CSS do componente (Lit css template)
 
 **Critérios de aceite**:
-- [ ] Domínio modelado com tipos explícitos
+- [ ] Domínio modelado com JSDoc para documentação de tipos
 - [ ] Validador cobre: email required, email formato, senha required, senha min 6
 - [ ] Mock retorna sucesso para admin@mfe.dev/123456 e erro para qualquer outro
 - [ ] `bun install` funciona sem erros no workspace
@@ -27,13 +27,12 @@
 
 **Branch**: `task/mfe-login-components`
 
-**Arquivos** (6):
-1. `apps/mfe-login/src/styles/login.styles.ts` — CSS (card centralizado, responsivo, estados)
-2. `apps/mfe-login/src/components/login-form.ts` — Formulário com validação inline
-3. `apps/mfe-login/src/components/login-links.ts` — Links "esqueci senha" + "cadastro"
-4. `apps/mfe-login/src/components/mfe-login.ts` — Orquestrador (usa AuthService, gerencia estado)
-5. `apps/mfe-login/src/index.ts` — Atualizar imports/exports
-6. `apps/shell/index.html` — Adicionar `<mfe-login>` + import map entry
+**Arquivos** (5):
+1. `apps/mfe-login/src/components/login-form.js` — Formulário com validação inline
+2. `apps/mfe-login/src/components/login-links.js` — Links "esqueci senha" + "cadastro"
+3. `apps/mfe-login/src/components/mfe-login.js` — Orquestrador (usa AuthService, gerencia estado)
+4. `apps/mfe-login/src/index.js` — Atualizar imports/exports
+5. `apps/shell/index.html` — Adicionar `<mfe-login>` + import map entry
 
 **Critérios de aceite**:
 - [ ] `<mfe-login>` renderiza formulário completo
@@ -50,11 +49,11 @@
 **Branch**: `task/mfe-login-tests`
 
 **Arquivos** (5):
-1. `apps/mfe-login/vitest.config.ts` — Config de testes (coverage threshold 100%)
-2. `apps/mfe-login/src/__tests__/credentials.spec.ts` — Testes de tipo/criação
-3. `apps/mfe-login/src/__tests__/credential-validator.spec.ts` — Testes de validação (happy + edge)
-4. `apps/mfe-login/src/__tests__/auth-service-mock.spec.ts` — Testes do mock (sucesso + erro)
-5. `apps/mfe-login/src/__tests__/mfe-login.spec.ts` — Testes de componente (render, submit, events)
+1. `apps/mfe-login/vitest.config.js` — Config de testes (coverage threshold 100%)
+2. `apps/mfe-login/src/__tests__/credentials.spec.js` — Testes de factory/criação
+3. `apps/mfe-login/src/__tests__/credential-validator.spec.js` — Testes de validação (happy + edge)
+4. `apps/mfe-login/src/__tests__/auth-service-mock.spec.js` — Testes do mock (sucesso + erro)
+5. `apps/mfe-login/src/__tests__/mfe-login.spec.js` — Testes de componente (render, submit, events)
 
 **Critérios de aceite**:
 - [ ] 100% coverage em domínio (entities, validators, services)
@@ -66,7 +65,7 @@
 
 ## Ordem de Execução
 
-1. Task 1 (domínio) → merge na feature
+1. Task 1 (domínio + estilos) → merge na feature
 2. Task 2 (componentes) → merge na feature
 3. Task 3 (testes) → merge na feature
 4. Feature completa → merge na developer
