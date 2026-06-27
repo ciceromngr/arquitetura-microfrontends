@@ -133,6 +133,18 @@ Referências relacionadas: [adr.md](./adr.md), [quality-rules.md](./quality-rule
 
 ---
 
+### 2026-06-27 — fs_write com $schema de URL remota falha em Supervised mode
+
+**Sintoma**: Ao criar `nx.json` com campo `"$schema": "./node_modules/nx/schemas/nx-schema.json"`, o Kiro retorna erro "Cannot use this tool to write Remote JSON Schema in Supervised mode".
+
+**Causa raiz**: O Kiro interpreta qualquer campo `$schema` em JSON como tentativa de referenciar um JSON Schema remoto e bloqueia a escrita em modo Supervised.
+
+**Solução**: Remover o campo `$schema` do JSON antes de escrever. O NX funciona sem ele — o schema é apenas para autocomplete na IDE.
+
+**Prevenção**: Ao criar JSONs de configuração (nx.json, tsconfig, etc), NUNCA incluir `$schema` na escrita via fs_write. Adicionar manualmente depois ou via sed se precisar.
+
+---
+
 ## Manutenção
 
 ### Quando documentar aqui
